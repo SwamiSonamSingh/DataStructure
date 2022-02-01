@@ -1,6 +1,6 @@
 package level1;
 import java.util.*;
-public class StateOfWakanda {
+public class ExitPointOfMatrix {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int row=sc.nextInt();
@@ -11,18 +11,16 @@ public class StateOfWakanda {
                 arr[i][j]=sc.nextInt();
             }
         }
-        for(int i=0;i<col;i++){
-            if(i%2==0){
-                for(int j=0;j<row;j++){
-                    System.out.println(arr[j][i]);
+        int minRow=0;
+        int minCol=0;
+        int maxRow=row-1;
+        int maxCol=col-1;
+        for(int i=minRow;i<maxRow;i++){
+            for(int j=minCol;j<maxCol;j++){
+                if(arr[i][j]==1){
+
                 }
             }
-            else{
-                for(int k=row-1;k>=0;k--){
-                    System.out.println(arr[k][i]);
-                }
-            }
-//            System.out.println();
         }
     }
 }
