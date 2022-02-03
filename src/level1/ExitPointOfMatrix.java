@@ -11,16 +11,40 @@ public class ExitPointOfMatrix {
                 arr[i][j]=sc.nextInt();
             }
         }
-        int minRow=0;
-        int minCol=0;
-        int maxRow=row-1;
-        int maxCol=col-1;
-        for(int i=minRow;i<maxRow;i++){
-            for(int j=minCol;j<maxCol;j++){
-                if(arr[i][j]==1){
-
-                }
+        int direction=0;
+        int i=0;
+        int j=0;
+        while(true){
+            direction=(direction+arr[i][j])%4;
+            if(direction==0){
+                j++;
+            }
+            else if(direction==1){
+                i++;
+            }
+            else if(direction==2){
+                j--;
+            }
+            else if(direction==3){
+                i--;
+            }
+            if(i<0){
+                i++;
+                break;
+            }
+            else if(j<0){
+                j++;
+                break;
+            }
+            else if(i==row){
+                i--;
+                break;
+            }
+            else if(j==col){
+                j--;
+                break;
             }
         }
+        System.out.println(i+" "+j);
     }
 }
