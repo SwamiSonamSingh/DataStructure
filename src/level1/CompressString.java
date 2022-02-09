@@ -1,7 +1,7 @@
 package level1;
 import java.util.*;
 public class CompressString {
-    public static void uniqueCharater(String s){
+    public static String uniqueCharater(String s){
         char ch=s.charAt(0);
         String result=ch+"";
         for(int i=1;i<s.length();i++){
@@ -11,9 +11,9 @@ public class CompressString {
                 result=result+current;
             }
         }
-        System.out.println(result);
+        return result;
     }
-    public static void compressionString(String s){
+    public static String compressionString(String s){
         char ch=s.charAt(0);
         String result=ch+"";
         int count=1;
@@ -35,12 +35,12 @@ public class CompressString {
             result=result+count;
             count=1;
         }
-        System.out.println(result);
+        return result;
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         String str=sc.next();
-        uniqueCharater(str);
-        compressionString(str);
+        System.out.println(uniqueCharater(str));
+        System.out.println(compressionString(str));
     }
 }
